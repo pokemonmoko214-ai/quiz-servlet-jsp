@@ -51,19 +51,19 @@ game_quiz
            └── game.jsp        (★新規：作成中ページ)
 ```
 
-### デモ画面
+## デモ画面
 
-#### 左：ゲーム選択画面 (index.jsp) ／ 右：ゲーム(準備中)画面 (gameA.jsp)
-<img src="images/readme/index.jpeg" width="300" style="margin-right: 50px;">&nbsp;<img src="images/readme/game.jpeg" width="300">
+#### 左：ゲーム選択画面 (index.jsp) ／右：ゲーム(準備中)画面 (gameA.jsp)
+<img src="images/readme/index.jpeg" width="35%" style="margin-right: 2%;">&nbsp;<img src="images/readme/game.jpeg" width="35%">
 
 #### 左：クイズトップ画面 (quiztop.jsp) ／ 右：クイズ回答画面 (quiz.jsp)
-<img src="images/readme/quiztop.jpeg" width="300" height="190" style="margin-right: 30px;">&nbsp;<img src="images/readme/quiz.jpeg" width="300">
+<img src="images/readme/quiztop.jpeg" width="35%" height="30%" style="margin-right: 30px;">&nbsp;<img src="images/readme/quiz.jpeg" width="35%">
 
 #### 左：クイズ正解画面 (ok.jsp) ／ 右：クイズ不正解画面 (no.jsp)
-<img src="images/readme/ok.png" width="300" style="margin-right: 30px;">&nbsp;<img src="images/readme/no.png" width="300">
+<img src="images/readme/ok.png" width="35%" style="margin-right: 30px;">&nbsp;<img src="images/readme/no.png" width="35%">
 
 
 
 
 #### 結果画面 (quizResult.jsp)
-<img src="images/readme/quizresult.jpeg" width="300">
+<img src="images/readme/quizresult.jpeg" width="35%">
