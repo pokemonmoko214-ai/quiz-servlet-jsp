@@ -1,0 +1,466 @@
+@charset "UTF-8";
+
+
+
+html {
+
+	background-color: #FFD6E8;
+}
+
+/***** index.jspページの設定 *****/
+.game-title {
+  position: absolute;
+  top: 25%;               /* 上から20%の位置に配置 */
+  left: 50%;              /* 横方向の中央 */
+  transform: translateX(-50%); /* 中央揃えの補正 */
+  font-size: 40px;
+  color: rgb(187, 119, 255);
+  text-align: center;
+}
+
+.button-area2 {
+
+	display: flex;
+	gap: 20px;
+	/* ボタン同士の間隔 */
+	justify-content: center;
+	/* 横方向の中央寄せ */
+	align-items: center;
+	/* 縦方向の中央 */
+	height: 100vh;
+	/* 画面の高さ全体を使う */
+}
+
+.yumekawa-btn,
+.game-btn {
+	display: flex;
+	justify-content: center;
+	/* 横方向の中央 */
+	align-items: center;
+	/* 縦方向の中央 */
+	width: 200px;
+	/* ボタンの横幅 */
+	padding: 15px;
+	/* 内側の余白（上下左右） */
+	font-size: 22px;
+	/* 文字サイズ */
+	border-radius: 30px;
+	/* 角を丸くする（ゆめかわ感UP） */
+	border: none;
+	/* 枠線なしでスッキリ */
+	cursor: pointer;
+	/* ホバー時にカーソルを指マークに */
+
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1),
+		0 0 0 2px rgba(255, 255, 255, 0.4);
+	transition: transform 0.2s, box-shadow 0.2s;
+
+}
+
+.yumekawa-btn:hover,
+.game-btn:hover {
+	transform: scale(1.05);
+	box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15),
+		0 0 0 2px rgba(255, 255, 255, 0.7);
+}
+
+/* ここまで*/
+/**************************************************/
+
+/***** quizTop.jspページの設定 *****/
+
+body.quiztop {
+    background-image: url("../images/quiz/quizTop1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0; /* 追加：念のため内側余白をリセット */
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+}
+
+/* タイトル：上部に配置 */
+.title {
+	margin: 0; 
+	position: absolute;
+	top: 20%; /* 上から25%の位置 */
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	white-space: nowrap;
+	font-family: "Kaisei Tokumin", serif;
+	font-size: 70px;
+	letter-spacing: 0.15em;
+	font-weight: 800;
+	color: #ffffff;
+	text-shadow: 0 0 10px #ff66cc, 0 0 20px #ffccff, 0 0 30px #ff00ff,
+		2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* ボタン共通設定 */
+.main-btn,
+.sub-btn {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	display: block;
+	width: 220px;
+	padding: 15px;
+	font-size: 20px;
+	border-radius: 30px;
+	border: none;
+	cursor: pointer;
+	background: rgba(255, 255, 255, 0.85);
+	backdrop-filter: blur(4px);
+	box-shadow: 0 4px 15px rgba(255, 180, 255, 0.5);
+	transition: all 0.3s ease;
+	font-family: "Yu Gothic", sans-serif;
+}
+
+/* ボタンの位置：タイトルより下、虹のあたりに配置 */
+.main-btn {
+	top: 63%; /* 虹の上あたり */
+}
+
+.sub-btn {
+	top: 73%; /* さらにその下 */
+}
+
+.main-btn:hover,
+.sub-btn:hover {
+	transform: translateX(-50%) scale(1.1); /* 少し大きく */
+	    background: #fff; /* 不透明度を上げる */
+	    box-shadow: 0 0 20px #fff, 0 0 40px #ffccff; /* 外側に光を放つ */
+	  }
+	  
+ 
+/* ここまで*/
+/**************************************************/
+
+/***** quiz.jsp/ok.jsp/no.jspページの設定 *****/
+body.quiz {
+	background-image: url("../images/quiz/quiz.png");
+	background-size: 78%;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 0;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+}
+
+/* 第〇問 */
+h2 {
+	position: absolute;
+	top: 16%;
+	left: 48%;
+	transform: translateX(-50%);
+	font-size: 32px;
+	color: #5A3A1E;
+	margin: 0;
+}
+
+/* 問題文（白枠の中） */
+.question-area {
+	position: absolute;
+	top: 180px;
+	/* 白枠の中段に合わせる（調整可） */
+	left: 50%;
+	transform: translateX(-50%);
+	width: 1000px;
+	/* 白枠の横幅に合わせる */
+	height: 180px;
+	/* 白枠の高さに合わせる */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+/*問題文の設定*/
+.question-text {
+	font-size: 30px;
+	color: #5A3A1E;
+	font-weight: bold;
+	white-space: pre-line;
+	position: absolute;
+	top: 10%;
+	left: 47%;
+	transform: translateX(-50%);
+	width: 70%;
+	text-align: center;
+}
+
+/*ボタンの設定*/
+.choice-button {
+	position: absolute;
+	left: 48.6%;
+	transform: translateX(-50%);
+	width: 80%;
+	max-width: 320px;
+
+	height: 60px;
+	line-height: 60px;
+	font-size: 26px;
+	font-weight: bold;
+	background-color: rgba(255, 255, 255, 0.85);
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	text-align: center;
+	color: #5A3A1E;
+}
+
+/*1～4のボタン位置設定*/
+.choice1 {
+	top: 465px;
+}
+
+.choice2 {
+	top: 565px;
+}
+
+.choice3 {
+	top: 664px;
+}
+
+.choice4 {
+	top: 763px;
+}
+
+/*quiz.jspのホバー__*/
+/*選択肢にカーソルを合わせたとき色が変わる*/
+.choice-button:hover {
+	background-color: #d6f0ff;
+	box-shadow: 0 0 12px rgba(214, 240, 255, 0.8);
+}
+
+/*〇、×共通の設定*/
+.correct-mark,
+.batsu-mark {
+	position: absolute;
+	top: 47%;
+	left: 48%;
+	transform: translate(-50%, -50%);
+	font-size: 800px;
+	font-weight: bold;
+	text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+	z-index: 9999;	/* 最前面に表示 */
+	opacity: 0.93; /* ← 透明度（0〜1）*/
+}
+
+/*〇の色設定*/
+.correct-mark {
+	color: #FF3F6F;
+}
+
+/*×の色設定*/
+.batsu-mark {
+	font-size: 1100px;
+	color: #7FE7CC;
+}
+
+/*ユニコーン画像設定*/
+.unicorn {
+	position: absolute;
+	bottom: 1%;	/* 下からの距離（調整可） */
+	left: 67%;	/*中央からの距離（調整可） */
+	width: 350px;	/* ユニコーンのサイズ（調整可） */
+	height: auto;
+	z-index: 11;/* 他の要素より前面に表示 */
+}
+
+
+/*星表示枠*/
+.star-area {
+	position: absolute;
+	bottom: 42%;
+	/* ユニコーンの頭の少し上に浮かせる */
+	left: 69%;
+
+	display: inline-block;
+	/* ← 枠を中身に合わせて縮める */
+	width: 180px;
+	/* ← 好きな幅に調整（ここを狭くすると横幅が縮む） */
+
+	background: rgba(255, 255, 255, 0.6);
+	/* ふんわり白の魔法感 */
+	padding: 10px 8px;
+	/* ← 左右の余白を少し減らしてさらに細く */
+	border-radius: 12px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #B37BFF;
+	text-align: center;
+	backdrop-filter: blur(4px);
+	box-shadow: 0 0 10px rgba(255, 200, 255, 0.8);
+	animation: float 3s ease-in-out infinite;
+	z-index: 10;
+	font-family: "Yu Gothic", sans-serif;
+	}
+
+/* ★（画像を包む枠） */
+.star {
+	margin: 0 2px;
+	color: rgb(255, 255, 0);
+}
+
+/* 星画像 */
+.star-img {
+	width: 22px;
+	/* 星画像のサイズはそのまま */
+	height: 22px;
+	margin: 0 2px;
+	vertical-align: middle;
+}
+
+/* ふわふわ浮くアニメーション */
+@keyframes float {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-6px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+/* ここまで*/
+/**************************************************/
+
+/**************** quizresult.jsp ********/
+
+body.quizResult {
+	background-image: url("../images/quiz/quizResult.png");
+	background-size: 78%;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 0;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+	font-family: "Yu Gothic", sans-serif;
+}
+
+.niji2 {
+	position: absolute;
+	top: 200px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 1000px;
+	/* 必要に応じてサイズ指定 */
+}
+
+.rank-title-area {
+	position: absolute;
+	top: 30px;
+	/* ← 好きな位置に調整 */
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	font-size: 70px;
+	font-family: "Kaisei Tokumin", serif;
+	white-space: nowrap;
+	color: #FFF100;
+	text-shadow: 0 0 8px #FFD700, 2px 2px 2px #B084FF;
+	font-weight: 900;
+}
+
+.rank-label {
+	font-size: 30px;
+	color: #fff4d4;
+}
+
+.rank-name {
+	font-size: 70px;
+	white-space: nowrap;
+	color: #FFF100;
+	text-shadow: 0 0 8px #FFD700, 2px 2px 2px #B084FF;
+	font-weight: 900;
+}
+
+@keyframes shake-yami {
+	0% {
+		transform: translateX(-50%) rotate(0.5deg);
+	}
+
+	50% {
+		transform: translateX(-51%) rotate(-0.5deg);
+	}
+
+	100% {
+		transform: translateX(-50%) rotate(0.5deg);
+	}
+}
+
+.yami-style {
+	animation: shake-yami 0.1s infinite;
+	/* 小刻みに震える */
+	color: #4B0082 !important;
+	/* 濃い紫 */
+	text-shadow: 0 0 10px #FF0000, 0 0 20px #000 !important;
+	/* 赤と黒の不気味な光 */
+}
+
+/* 結果表示の位置調整 */
+.result-area {
+	position: absolute;
+	top: 480px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-family: "Kaisei Tokumin", serif;
+	text-align: center;
+	color: #9259B5;
+	/* ← 見やすいゆめかわラベンダー */
+	font-size: 50px;
+	font-weight: bold;
+	text-shadow: 0 0 6px rgba(255, 255, 255, 0.9), 0 0 12px rgba(180, 130, 255, 0.7);
+	/* ← ふわっと浮かせる */
+}
+
+/* ボタンとリンクの位置調整 */
+.button-area {
+	position: absolute;
+	top: 700px;
+	/* ← ボタンの縦位置 */
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	display: flex;
+	/* 横並びにする */
+	gap: 40px;
+	/* ボタン同士の間隔 */
+}
+
+.button-area form {
+	margin: 0px;
+	/* ← ここを好きな数値に変更 */
+}
+
+.button-area button {
+	width: 200px;
+	height: 50px;
+	font-size: 20px;
+	border: none;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.9);
+	color: #5A3A1E;
+	box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+
+.button-area a {
+	display: block;
+	margin-top: 10px;
+	font-size: 18px;
+	color: #fff;
+	text-decoration: underline;
+}
